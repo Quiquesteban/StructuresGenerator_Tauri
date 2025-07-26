@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generador TwinCAT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+
+  <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm text-center">
+
+    <!-- Paso 1: Selección de archivo -->
+    <div id="step1" class="step flex flex-col gap-4">
+      <button id="selectFileBtn" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg">
+        📂 Seleccionar archivo Excel
+      </button>
+    </div>
+
+    <!-- Paso 2: Cargando archivo -->
+    <div id="step2" class="step hidden flex-col items-center gap-4 min-h-[100px] justify-center">
+      <span class="text-gray-600">Cargando archivo...</span>
+      <div class="w-full bg-gray-300 rounded h-2 overflow-hidden">
+        <div class="h-full bg-green-500 w-[70%] animate-pulse"></div>
+      </div>
+    </div>
+
+    <!-- Paso 3: Selección de hoja -->
+    <div id="step3" class="step hidden flex-col gap-4">
+      <label for="sheetDropdown" class="text-gray-700">Selecciona una hoja:</label>
+      <select id="sheetDropdown"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-800 mb-2"></select>
+      <button id="confirmSheetBtn"
+              class="bg-blue-600 text-white px-4 py-2 rounded-md w-full">✅ Generar estructura</button>
+      <button id="backToStep1From3"
+              class="bg-gray-200 text-gray-700 px-4 py-2 rounded text-sm">⬅ Subir otro archivo</button>
+    </div>
+
+    <!-- Paso 4: Archivo generado -->
+    <div id="step4" class="step hidden flex-col gap-4">
+      <h2 class="text-xl font-semibold text-gray-800">Archivo generado</h2>
+      <div id="outputCardContainer"></div>
+      <div class="flex flex-col gap-2 mt-2">
+        <button id="backToStep3"
+                class="bg-gray-200 text-gray-700 px-4 py-2 rounded text-sm">⬅ Elegir otra hoja</button>
+        <button id="backToStep1From4"
+                class="bg-gray-200 text-gray-700 px-4 py-2 rounded text-sm">⬅ Subir otro archivo</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="drag-image" class="absolute -top-[1000px] -left-[1000px] px-4 py-2 bg-white border border-gray-300 rounded text-sm shadow"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

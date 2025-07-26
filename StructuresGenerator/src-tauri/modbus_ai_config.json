@@ -1,0 +1,40 @@
+{
+    "address": [
+        "addr",
+        "address",
+        "direccion",
+        "dir",
+        "modbus address",
+        "slave address"
+    ],
+    "name": [
+        "name",
+        "nombre",
+        "variable",
+        "signal name",
+        "description"
+    ],
+    "datatype": [
+        "type",
+        "data type",
+        "datatype",
+        "tipo",
+        "data format"
+    ],
+    "offset": [
+        "offset",
+        "desplazamiento"
+    ],
+    "unit": [
+        "unit",
+        "unidad",
+        "units"
+    ],
+    "description": [
+        "description",
+        "desc",
+        "informacion",
+        "comentario",
+        "info"
+    ]
+}
